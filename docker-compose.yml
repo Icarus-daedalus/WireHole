@@ -65,13 +65,10 @@ services:
         ipv4_address: 10.2.0.2 # Same IP as your old wireguard container
     environment:
       # This must be your server's public IP address
-      - INIT_HOST=${SERVERURL}
+      - WG_HOST=${SERVERURL}
 
       # This is the password for the Web UI
-      - INIT_PASSWORD=${WGUI_PASSWORD}
+      - PASSWORD=${WGUI_PASSWORD}
 
       # This should be your Pi-hole's IP address
-      - INIT_DNS=10.2.0.100
-
-      # Required for HTTP access without HTTPS
-      - INSECURE=true
+      - WG_DEFAULT_DNS=10.2.0.100
