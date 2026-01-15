@@ -59,12 +59,10 @@ services:
       - net.ipv4.ip_forward=1
     volumes:
       - ./wireguard-easy-data:/etc/wireguard
+      - /lib/modules:/lib/modules:ro
     networks:
       private_network:
-        ipv4_address: 10.2.0.2 # Same IP as your old wireguard container
+        ipv4_address: 10.2.0.2
     environment:
       - WG_HOST=${SERVERURL}
-      - PASSWORD=${WGUI_PASSWORD}  # v15: будет warning, для устранения используйте PASSWORD_HASH с bcrypt
-      - WG_DEFAULT_DNS=10.2.0.100
-      - WG_PORT=51820
-      - WG_PERSISTENT_KEEPALIVE=25
+      - INSECURE=true
