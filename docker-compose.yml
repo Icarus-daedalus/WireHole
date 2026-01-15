@@ -43,14 +43,14 @@ services:
       - FTLCONF_dns_upstreams=10.2.0.200#53 #unbound DNS 
 
   wg-easy:
-    image: ghcr.io/wg-easy/wg-easy:15
+    image: ghcr.io/wg-easy/wg-easy
     container_name: wg-easy
     restart: unless-stopped
     depends_on:
       - pihole
     ports:
       - "51820:51820/udp"
-      - "51821:51821/tcp" # This is the new port for the Web UI
+      - "51821:51821/tcp"
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
@@ -59,10 +59,12 @@ services:
       - net.ipv4.ip_forward=1
     volumes:
       - ./wireguard-easy-data:/etc/wireguard
-      - /lib/modules:/lib/modules:ro
     networks:
       private_network:
         ipv4_address: 10.2.0.2
     environment:
-      - WG_HOST=${SERVERURL}
-      - INSECURE=true
+      - LANG=ru
+      - WG_HOST=193.42.126.241
+      - PASSWORD_HASH=$$2a$$12$$RBxIxnqm1dJReqIdOWe/hu/nPz6dFdDdvjcIzVbnOZgLh/djsKuji
+      - PORT=51821
+      - WG_PORT=51820
