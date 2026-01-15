@@ -43,7 +43,7 @@ services:
       - FTLCONF_dns_upstreams=10.2.0.200#53 #unbound DNS 
 
   wg-easy:
-    image: ghcr.io/wg-easy/wg-easy:15.1.0
+    image: ghcr.io/wg-easy/wg-easy:15
     container_name: wg-easy
     restart: unless-stopped
     depends_on:
