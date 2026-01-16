@@ -64,8 +64,8 @@ services:
         ipv4_address: 10.2.0.2
     environment:
       - LANG=ru
-      - WG_HOST=193.42.126.241
-      - PASSWORD_HASH=$$2a$$12$$RBxIxnqm1dJReqIdOWe/hu/nPz6dFdDdvjcIzVbnOZgLh/djsKuji
+      - WG_HOST=${SERVERURL}
+      - PASSWORD_HASH=${PASSWORD_HASH_CODE}
       - PORT=51821
       - WG_PORT=51820
       - WG_DEFAULT_DNS=10.2.0.100
