@@ -68,3 +68,4 @@ services:
       - PASSWORD_HASH=$$2a$$12$$RBxIxnqm1dJReqIdOWe/hu/nPz6dFdDdvjcIzVbnOZgLh/djsKuji
       - PORT=51821
       - WG_PORT=51820
+      - WG_DEFAULT_DNS=10.2.0.100
