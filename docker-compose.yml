@@ -65,9 +65,7 @@ services:
     environment:
       - LANG=ru
       - WG_HOST=${SERVERURL}
-      - PASSWORD=${WGUI_PASSWORD}
       - PASSWORD_HASH=${PASSWORD_HASH_CODE}
       - PORT=51821
       - WG_PORT=51820
       - WG_DEFAULT_DNS=10.2.0.100
-      - ./wireguard-easy-data:/etc/wireguard
