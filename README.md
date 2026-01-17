@@ -44,8 +44,8 @@ Wirehole is a self-hosted solution combining **WireGuard VPN**, **Pi-hole** (ad 
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/Turtlecute33/WireHole-Revamp.git
-    cd WireHole-Revamp
+    git clone https://github.com/Icarus-daedalus/WireHole.git
+    cd WireHole
     ```
 
 2. **Edit `.env` File:**
