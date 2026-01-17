@@ -70,9 +70,7 @@ services:
       - PORT=51821
       - WG_PORT=51820
       - WG_DEFAULT_DNS=10.2.0.100
-      - ./wireguard-easy-data:/etc/wireguard
-      - publish 51820:51820/udp 
-      - publish 51821:51821/tcp 
+      - ./wireguard-easy-data:/etc/wireguard 
       - cap-add NET_ADMIN
       - cap-add SYS_MODULE 
       - sysctls net.ipv4.conf.all.src_valid_mark=1
