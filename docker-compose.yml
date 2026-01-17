@@ -65,7 +65,16 @@ services:
     environment:
       - LANG=ru
       - WG_HOST=${SERVERURL}
+      - PASSWORD=${WGUI_PASSWORD}
       - PASSWORD_HASH=${PASSWORD_HASH_CODE}
       - PORT=51821
       - WG_PORT=51820
       - WG_DEFAULT_DNS=10.2.0.100
+      - ./wireguard-easy-data:/etc/wireguard
+      - publish 51820:51820/udp 
+      - publish 51821:51821/tcp 
+      - cap-add NET_ADMIN
+      - cap-add SYS_MODULE 
+      - sysctls net.ipv4.conf.all.src_valid_mark=1
+      - sysctls net.ipv4.ip_forward=1
+      - restart unless-stopped
